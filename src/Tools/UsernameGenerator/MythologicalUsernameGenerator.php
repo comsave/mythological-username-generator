@@ -22,20 +22,23 @@ class MythologicalUsernameGenerator
     {
         srand($seed);
 
-        // todo: move out to github
-        return sprintf('%s%s%s',
+        return vsprintf('%s%s%s', [
             $this->getRandomLineFromWordFile(static::ADJECTIVES_FILE_PATH),
             $this->getRandomLineFromWordFile(static::GREEK_NAMES_FILE_PATH),
             rand(1, 99)
-        );
+        ]);
     }
 
-    private function getRandomLineFromWordFile($relativePath): string
+    private function getRandomLineFromWordFile(string $resourceFileName): string
     {
         // todo: add cache or make some other method to load
-
-        $lines = file(sprintf('%s/%s', $this->absoluteResourcePath, $relativePath));
+        $lines = file($this->getFullResourcePath($resourceFileName));
 
         return $lines[array_rand($lines)];
+    }
+
+    public function getFullResourcePath(string $relativePath): string
+    {
+        return sprintf('%s/%s', $this->absoluteResourcePath, $relativePath);
     }
 }
