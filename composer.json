@@ -3,11 +3,36 @@
     "description": "Mythological username generator",
     "type": "library",
     "license": "MIT",
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "phpunit/php-code-coverage": "^7.0",
+        "spatie/phpunit-snapshot-assertions": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Comsave\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Comsave\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "run-tests": "vendor/bin/phpunit -c phpunit.xml.dist --no-coverage",
+        "run-coverage": "vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover tests/_output/coverage.xml",
+        "run-coverage-text": "vendor/bin/phpunit -c phpunit.xml.dist --coverage-text=tests/_output/coverage.txt && cat tests/_output/coverage.txt"
+    },
     "authors": [
         {
-            "name": "Vaidas Bagdonas",
-            "email": "vaidas.bagdonas@comsave.com"
+            "name": "Joeri Veder",
+            "email": "joeri.veder@comsave.com"
         }
     ],
-    "require": {}
+    "config": {
+        "sort-packages": true
+    }
 }
