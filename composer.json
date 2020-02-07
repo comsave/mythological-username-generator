@@ -1,0 +1,13 @@
+{
+    "name": "comsave/mythological-username-generator",
+    "description": "Mythological username generator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vaidas Bagdonas",
+            "email": "vaidas.bagdonas@comsave.com"
+        }
+    ],
+    "require": {}
+}
