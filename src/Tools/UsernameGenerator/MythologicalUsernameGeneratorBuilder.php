@@ -6,11 +6,11 @@ class MythologicalUsernameGeneratorBuilder
 {
     public function build(): MythologicalUsernameGenerator
     {
-        return new MythologicalUsernameGenerator($this->getAbsoluteResourcePath());
+        return new MythologicalUsernameGenerator(static::getAbsoluteResourcePath());
     }
 
-    public function getAbsoluteResourcePath(): string
+    public static function getAbsoluteResourcePath(): string
     {
-        return  sprintf('%s/Resources/', dirname(__FILE__));
+        return sprintf('%s/Resources/', dirname(__FILE__));
     }
 }
