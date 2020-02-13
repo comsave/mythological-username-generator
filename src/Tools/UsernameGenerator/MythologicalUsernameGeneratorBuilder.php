@@ -2,9 +2,12 @@
 
 namespace Comsave\Tools\UsernameGenerator;
 
+/**
+ * Stating methods required for Symfony service build from factory in yml
+ */
 class MythologicalUsernameGeneratorBuilder
 {
-    public function build(): MythologicalUsernameGenerator
+    public static function build(): MythologicalUsernameGenerator
     {
         return new MythologicalUsernameGenerator(static::getAbsoluteResourcePath());
     }
