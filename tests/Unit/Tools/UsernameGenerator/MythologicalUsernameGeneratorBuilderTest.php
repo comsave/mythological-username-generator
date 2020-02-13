@@ -8,16 +8,8 @@ use PHPUnit\Framework\TestCase;
 
 class MythologicalUsernameGeneratorBuilderTest extends TestCase
 {
-    /** @var MythologicalUsernameGeneratorBuilder */
-    private $usernameGeneratorBuilder;
-
-    public function setUp(): void
-    {
-        $this->usernameGeneratorBuilder = new MythologicalUsernameGeneratorBuilder();
-    }
-
     public function testBuild(): void
     {
-        $this->assertInstanceOf(MythologicalUsernameGenerator::class, $this->usernameGeneratorBuilder->build());
+        $this->assertInstanceOf(MythologicalUsernameGenerator::class, MythologicalUsernameGeneratorBuilder::build());
     }
 }
